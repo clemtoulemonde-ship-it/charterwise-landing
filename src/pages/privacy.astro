@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy — CharterWise">
+  <header class="bg-[#1B3A5C]">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <img src="/icon.png" alt="CharterWise" class="h-8 w-8 rounded-lg object-cover" />
+        <span class="text-white font-bold text-xl tracking-tight">CharterWise</span>
+      </a>
+      <a href="/" class="text-white/70 hover:text-white text-sm transition-colors">← Back</a>
+    </nav>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-6 py-20">
+    <h1 style="font-family:'Playfair Display',Georgia,serif" class="text-4xl font-bold text-[#1B3A5C] mb-4">Privacy Policy</h1>
+    <p class="text-[#6B7280] text-sm mb-12">Last updated: March 2026</p>
+
+    <div class="prose prose-gray max-w-none space-y-8 text-[#6B7280] leading-relaxed">
+      <section>
+        <h2 class="text-xl font-bold text-[#111827] mb-3">What we collect</h2>
+        <p>When you use CharterWise, we collect the information you provide directly: your email address, display name, sailing experience level, and the content of reviews, pick-up reports, and issue reports you submit. We also collect photos you choose to attach to reports and reviews.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111827] mb-3">How we use it</h2>
+        <p>Your data is used to operate the CharterWise service — to display boat condition information to other users, to associate reports with specific charter dates, and to authenticate you. We do not sell your personal data to third parties.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111827] mb-3">Data storage</h2>
+        <p>Data is stored on Supabase infrastructure (hosted on AWS). Pick-up reports are private until your charter end date passes, at which point they become visible to other CharterWise users. You can delete your account and all associated data at any time from within the app.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111827] mb-3">Cookies & analytics</h2>
+        <p>This website uses Plausible Analytics, a privacy-first analytics tool that does not use cookies and does not collect personal data. No cookie consent banner is required.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111827] mb-3">Contact</h2>
+        <p>Questions about your data? Email us at <a href="mailto:hello@charterwise.app" class="text-[#1B3A5C] underline">hello@charterwise.app</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-[#1B3A5C] text-white/60 py-8 mt-20">
+    <p class="text-center text-sm">© {new Date().getFullYear()} CharterWise</p>
+  </footer>
+</Layout>
