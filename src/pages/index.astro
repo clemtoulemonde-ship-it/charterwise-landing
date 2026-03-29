@@ -2,9 +2,32 @@
 import Layout from '../layouts/Layout.astro';
 
 const TESTFLIGHT_URL = 'https://testflight.apple.com/join/TTgDqpmY';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CharterWise",
+  "operatingSystem": "iOS",
+  "applicationCategory": "TravelApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Know your boat before you sail. CharterWise lets sailors research charter boats through real pick-up reports, condition scores, and community reviews.",
+  "url": "https://charterwise.app",
+  "screenshot": "https://charterwise.app/og-image.png",
+  "featureList": "Condition Score, Pick-up Reports, Charter Reviews, Issue Tracker",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+};
 ---
 
-<Layout>
+<Layout canonicalPath="/">
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <!-- NAV -->
   <header class="sticky top-0 z-50 bg-[#1B3A5C] shadow-md">
     <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
