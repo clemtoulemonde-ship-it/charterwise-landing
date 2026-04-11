@@ -29,7 +29,7 @@ const structuredData = {
 <Layout canonicalPath="/">
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-[#1B3A5C] shadow-md">
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-[#1B3A5C] to-[#0F2642] shadow-lg border-b border-white/10">
     <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5">
         <img src="/icon.png" alt="CharterWise" class="h-11 w-11 rounded-xl object-cover" />
@@ -44,7 +44,7 @@ const structuredData = {
         href={TESTFLIGHT_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-[#D4A843] hover:bg-[#B8902F] text-[#1B3A5C] font-bold text-sm px-5 py-2.5 rounded-lg transition-colors"
+        class="bg-gradient-to-b from-[#D4A843] to-[#BF9530] hover:from-[#E5B95A] hover:to-[#D4A843] text-[#1B3A5C] font-bold text-sm px-5 py-2.5 rounded-lg transition-all active:scale-95"
       >
         Get the app
       </a>
@@ -53,8 +53,8 @@ const structuredData = {
 
   <main>
     <!-- HERO -->
-    <section class="relative bg-[#1B3A5C] text-white min-h-[90vh] flex items-center overflow-hidden">
-      <div class="absolute inset-0 opacity-5"
+    <section class="relative bg-gradient-to-b from-[#1B3A5C] via-[#16304E] to-[#0F2642] text-white min-h-[90vh] flex items-center overflow-hidden">
+      <div class="absolute inset-0 opacity-3"
         style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 32px 32px;">
       </div>
 
@@ -67,20 +67,20 @@ const structuredData = {
             Know your boat<br />before you sail.
           </h1>
           <p class="text-white/75 text-lg leading-relaxed mb-10 max-w-lg">
-            CharterWise is the community app where charterers share real pick-up reports, flag issues, and score the condition of every boat — so you arrive prepared, not surprised.
+            The community-sourced condition record for charter boats. Real pick-up reports, five-system reviews, and a severity-weighted health score for every boat. So you arrive knowing exactly what you're sailing into.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href={TESTFLIGHT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-[#D4A843] hover:bg-[#B8902F] text-[#1B3A5C] font-bold text-base px-8 py-4 rounded-xl transition-colors text-center"
+              class="bg-gradient-to-b from-[#D4A843] to-[#BF9530] hover:from-[#E5B95A] hover:to-[#D4A843] text-[#1B3A5C] font-bold text-base px-8 py-4 rounded-xl transition-all active:scale-95 text-center shadow-lg"
             >
               Join the iOS Beta
             </a>
             <a
               href="#android"
-              class="border border-white/30 hover:border-white text-white font-semibold text-base px-8 py-4 rounded-xl transition-colors text-center"
+              class="border border-white/40 hover:border-white/80 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all active:scale-95 text-center backdrop-blur-sm hover:bg-white/5"
             >
               Notify me on Android
             </a>
