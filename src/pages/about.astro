@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout canonicalPath="/about">
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-[#1B3A5C] to-[#0F2642] shadow-lg border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <img src="/icon.png" alt="CharterWise" class="h-11 w-11 rounded-xl object-cover" />
+        <span class="text-white font-bold text-2xl tracking-tight">CharterWise</span>
+      </a>
+      <a
+        href="/"
+        class="text-white/80 hover:text-white transition-colors text-sm font-medium"
+      >
+        Back to home
+      </a>
+    </nav>
+  </header>
+
+  <main class="bg-white min-h-screen flex items-center">
+    <div class="max-w-2xl mx-auto px-6 py-24">
+      <div class="mb-12">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">About</p>
+        <h1 style="font-family:'Playfair Display',Georgia,serif" class="text-5xl font-bold text-[#1B3A5C] mb-8">
+          Built by a sailor who wanted better intel.
+        </h1>
+      </div>
+
+      <div class="space-y-6 text-[#6B7280] leading-relaxed">
+        <p>
+          I'm Clément, a 40-year-old based in London with a background in technology and operations. Over the past decade, I've worked at Google and Meta in Operations and Customer Support — roles that taught me how to listen to users, spot systemic problems, and build solutions that actually work.
+        </p>
+
+        <p>
+          But outside of work, I'm a sailor. I've chartered boats regularly across the Mediterranean, Caribbean, and beyond — sometimes solo, often with friends and family. And every single time, I've felt the same frustration: arriving at the marina with no real context about the boat's condition.
+        </p>
+
+        <p>
+          I'd step on board to discover seized winches, malfunctioning equipment, or maintenance issues that should never have surprised me. Charter listings show the sunset views, not the operational reality. And by the time you've identified problems, you're already committed — money spent, time blocked, crew assembled.
+        </p>
+
+        <p class="font-semibold text-[#1B3A5C]">
+          CharterWise exists because those two parts of my life — technology and sailing — finally intersected. I wanted to build something that would give the next sailor clarity I didn't have.
+        </p>
+
+        <p>
+          The app is built on a simple principle: sailors know their boats best. By capturing honest pick-up reports and reviews from the people who actually step aboard, we create a permanent, crowdsourced condition record. Not a marketing tool. Not a vibe score. A real, evolving picture of every boat's true state.
+        </p>
+
+        <p>
+          If you're a charterer who's felt the same frustration — or a boat owner committed to transparency — I'd love to hear from you. This is just the beginning.
+        </p>
+
+        <div class="pt-6 border-t border-[#E5E7EB]">
+          <p class="text-sm">
+            <span class="font-semibold text-[#1B3A5C]">Get in touch:</span><br />
+            <a href="mailto:hello@charterwise.app" class="text-[#D4A843] hover:text-[#E5B95A] transition-colors">hello@charterwise.app</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#1B3A5C] text-white/60 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <div class="flex items-center gap-2.5">
+        <img src="/icon.png" alt="CharterWise" class="h-6 w-6 rounded-md object-cover opacity-80" />
+        <span>
+          <span class="font-bold text-white">CharterWise</span>
+          <span class="ml-2">— Know your boat before you sail.</span>
+        </span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="/about" class="hover:text-white transition-colors">About</a>
+        <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
+        <a href="mailto:hello@charterwise.app" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+    <p class="max-w-6xl mx-auto px-6 mt-6 text-xs text-white/30 text-center sm:text-left">
+      © {new Date().getFullYear()} CharterWise. Built by sailors, for sailors.
+    </p>
+  </footer>
+</Layout>
