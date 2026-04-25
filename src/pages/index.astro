@@ -44,9 +44,10 @@ const structuredData = {
         href={APP_STORE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-gradient-to-b from-[#D4A843] to-[#BF9530] hover:from-[#E5B95A] hover:to-[#D4A843] text-[#1B3A5C] font-bold text-sm px-5 py-2.5 rounded-lg transition-all active:scale-95"
+        class="transition-opacity hover:opacity-80 active:opacity-60"
+        aria-label="Download on the App Store"
       >
-        Get the app
+        <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-9" />
       </a>
     </nav>
   </header>
@@ -69,14 +70,15 @@ const structuredData = {
           <p class="text-white/75 text-lg leading-relaxed mb-10 max-w-lg">
             The community-sourced condition record for charter boats. Real pick-up reports, five-system reviews, and a severity-weighted health score for every boat. So you arrive knowing exactly what you're sailing into.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col sm:flex-row gap-4 items-center">
             <a
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-gradient-to-b from-[#D4A843] to-[#BF9530] hover:from-[#E5B95A] hover:to-[#D4A843] text-[#1B3A5C] font-bold text-base px-8 py-4 rounded-xl transition-all active:scale-95 text-center shadow-lg"
+              class="transition-opacity hover:opacity-80 active:opacity-60"
+              aria-label="Download on the App Store"
             >
-              Download on the App Store
+              <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-14" />
             </a>
             <a
               href="#android"
@@ -343,9 +345,10 @@ const structuredData = {
           href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 bg-[#D4A843] hover:bg-[#B8902F] text-[#1B3A5C] font-bold text-lg px-10 py-5 rounded-xl transition-colors mb-14"
+          class="inline-block transition-opacity hover:opacity-80 active:opacity-60 mb-14"
+          aria-label="Download on the App Store"
         >
-          Download on the App Store
+          <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-16" />
         </a>
 
         <div class="border-t border-white/20 pt-10">
