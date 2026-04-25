@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const TESTFLIGHT_URL = 'https://testflight.apple.com/join/TTgDqpmY';
+const APP_STORE_URL = 'https://apps.apple.com/us/app/charterwise/id6761048802';
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -41,7 +41,7 @@ const structuredData = {
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
       <a
-        href={TESTFLIGHT_URL}
+        href={APP_STORE_URL}
         target="_blank"
         rel="noopener noreferrer"
         class="bg-gradient-to-b from-[#D4A843] to-[#BF9530] hover:from-[#E5B95A] hover:to-[#D4A843] text-[#1B3A5C] font-bold text-sm px-5 py-2.5 rounded-lg transition-all active:scale-95"
@@ -61,7 +61,7 @@ const structuredData = {
       <div class="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center w-full">
         <div>
           <div class="inline-flex items-center gap-2 bg-white/10 text-white/90 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
-            iOS Beta — Free
+            Free on the App Store
           </div>
           <h1 style="font-family:'Playfair Display',Georgia,serif" class="text-5xl md:text-6xl font-bold leading-tight mb-6">
             Know your boat<br />before you sail.
@@ -71,12 +71,12 @@ const structuredData = {
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href={TESTFLIGHT_URL}
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               class="bg-gradient-to-b from-[#D4A843] to-[#BF9530] hover:from-[#E5B95A] hover:to-[#D4A843] text-[#1B3A5C] font-bold text-base px-8 py-4 rounded-xl transition-all active:scale-95 text-center shadow-lg"
             >
-              Join the iOS Beta
+              Download on the App Store
             </a>
             <a
               href="#android"
@@ -85,7 +85,7 @@ const structuredData = {
               Notify me on Android
             </a>
           </div>
-          <p class="text-white/40 text-sm mt-4">Free · iOS now · Android coming soon</p>
+          <p class="text-white/40 text-sm mt-4">Free · iOS · Android coming soon</p>
         </div>
 
         <!-- Hero screenshot -->
@@ -142,13 +142,13 @@ const structuredData = {
               step: '1',
               icon: '🗺',
               title: 'Plan',
-              desc: 'Browse boats and check condition scores and reviews from fellow charterers before you book. Filter by hull type, region, and issue count.',
+              desc: 'Browse boats and check condition scores and reviews from fellow charterers before you book. Filter by hull type, cabins, and condition level.',
             },
             {
               step: '2',
               icon: '📋',
               title: 'Pick-up Report',
-              desc: "At handover, walk through 6 categories — rigging, engine, electronics, safety, hull, interior. Flag issues, attach photos, and your report immediately updates the boat's live condition score.",
+              desc: "At handover, walk through 5 systems — safety, rigging, engine, hull, interior. Flag issues, attach photos, and your report immediately updates the boat's live condition score.",
             },
             {
               step: '3',
@@ -270,11 +270,10 @@ const structuredData = {
               <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-5">Pick-up report categories</p>
               <div class="grid grid-cols-2 gap-3">
                 {[
+                  { icon: '🛡', label: 'Safety' },
                   { icon: '⛵', label: 'Rigging' },
                   { icon: '⚙️', label: 'Engine' },
-                  { icon: '🧭', label: 'Electronics' },
-                  { icon: '🛡', label: 'Safety' },
-                  { icon: '⚓', label: 'Hull & Deck' },
+                  { icon: '⚓', label: 'Hull' },
                   { icon: '🛏', label: 'Interior' },
                 ].map(({ icon, label }) => (
                   <div class="flex items-center gap-3 bg-[#F8F6F1] rounded-xl px-4 py-3">
@@ -286,9 +285,9 @@ const structuredData = {
             </div>
             <div class="order-1 md:order-2">
               <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Pick-up Report</p>
-              <h3 style="font-family:'Playfair Display',Georgia,serif" class="text-3xl font-bold text-[#1B3A5C] mb-5">The handover inspection, digitised.</h3>
+              <h3 style="font-family:'Playfair Display',Georgia,serif" class="text-3xl font-bold text-[#1B3A5C] mb-5">The handover moment, recorded.</h3>
               <p class="text-[#6B7280] leading-relaxed">
-                File your inspection before you leave the dock. Walk through six categories, flag what you find, and attach photos directly to each issue. Your report is timestamped, attached to the boat's permanent record, and visible to the next charterer.
+                File your pick-up report before you cast off. Walk through five systems, flag what you find, and attach photos directly to each issue. Your report is timestamped, attached to the boat's permanent record, and visible to the next sailor.
               </p>
             </div>
           </div>
@@ -312,10 +311,10 @@ const structuredData = {
               </div>
               <div class="space-y-3">
                 {[
+                  { label: 'Safety', rating: 5 },
                   { label: 'Rigging', rating: 5 },
                   { label: 'Engine', rating: 4 },
-                  { label: 'Electronics', rating: 4 },
-                  { label: 'Safety', rating: 5 },
+                  { label: 'Hull', rating: 4 },
                   { label: 'Comfort', rating: 4 },
                 ].map(({ label, rating }) => (
                   <div class="flex items-center gap-3">
@@ -337,15 +336,15 @@ const structuredData = {
     <section id="android" class="bg-[#1B3A5C] py-24">
       <div class="max-w-2xl mx-auto px-6 text-center">
         <h2 style="font-family:'Playfair Display',Georgia,serif" class="text-4xl font-bold text-white mb-5">Ready to charter smarter?</h2>
-        <p class="text-white/70 text-lg mb-10">Join the iOS beta on TestFlight — free, no subscription.</p>
+        <p class="text-white/70 text-lg mb-10">Free on the App Store — no subscription.</p>
 
         <a
-          href={TESTFLIGHT_URL}
+          href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-3 bg-[#D4A843] hover:bg-[#B8902F] text-[#1B3A5C] font-bold text-lg px-10 py-5 rounded-xl transition-colors mb-14"
         >
-          Download on TestFlight
+          Download on the App Store
         </a>
 
         <div class="border-t border-white/20 pt-10">
@@ -381,7 +380,7 @@ const structuredData = {
           {[
             {
               q: 'Is CharterWise free?',
-              a: 'Yes — completely free during beta. No subscription, no in-app purchases.',
+              a: 'Yes — completely free. No subscription, no in-app purchases.',
             },
             {
               q: 'Why did you create CharterWise?',
@@ -431,7 +430,7 @@ const structuredData = {
         <a href="/about" class="hover:text-white transition-colors">About</a>
         <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
         <a href="mailto:hello@charterwise.app" class="hover:text-white transition-colors">Contact</a>
-        <a href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">TestFlight</a>
+        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">App Store</a>
       </div>
     </div>
     <p class="max-w-6xl mx-auto px-6 mt-6 text-xs text-white/30 text-center sm:text-left">
