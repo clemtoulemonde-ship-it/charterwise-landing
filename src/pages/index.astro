@@ -17,7 +17,7 @@ const structuredData = {
   "description": "Know your boat before you sail. CharterWise lets sailors research charter boats through real pick-up reports, condition scores, and community reviews.",
   "url": "https://charterwise.app",
   "screenshot": "https://charterwise.app/og-image.png",
-  "featureList": "Condition Score, Pick-up Reports, Charter Reviews, Issue Tracker",
+  "featureList": "Condition Assessment, Check-in Reports, Community Reviews, Community Photos",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
@@ -105,7 +105,7 @@ const structuredData = {
     <section class="bg-white border-b border-[#E5E7EB]">
       <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm text-[#6B7280] font-medium">
         <div class="flex items-center gap-2"><span>⚓</span> Community-driven</div>
-        <div class="flex items-center gap-2"><span>🛡</span> Real pick-up reports</div>
+        <div class="flex items-center gap-2"><span>🛡</span> Real check-in reports</div>
         <div class="flex items-center gap-2"><span>★</span> Verified charterer reviews</div>
       </div>
     </section>
@@ -125,7 +125,7 @@ const structuredData = {
             Charter companies have every incentive to minimise reported issues. Listing photos are taken once. Reviews on booking platforms rate the holiday, not the boat.
           </p>
           <p class="font-semibold text-[#1B3A5C]">
-            CharterWise is built specifically for the handover moment: the pick-up report, filed by the sailor who just stepped off.
+            CharterWise is built specifically for the handover moment: the check-in report, filed by the sailor who just stepped off.
           </p>
         </div>
       </div>
@@ -142,21 +142,21 @@ const structuredData = {
           {[
             {
               step: '1',
-              icon: '🗺',
-              title: 'Plan',
-              desc: 'Browse boats and check condition scores and reviews from fellow charterers before you book. Filter by hull type, cabins, and condition level.',
+              icon: '🔍',
+              title: 'Discover',
+              desc: "Search boats and read community check-in reports before you book. Every boat profile shows a condition assessment — open issues by system, photos from real charterers, and whether flagged problems have been fixed.",
             },
             {
               step: '2',
               icon: '📋',
-              title: 'Pick-up Report',
-              desc: "At handover, walk through 5 systems — safety, rigging, engine, hull, interior. Flag issues, attach photos, and your report immediately updates the boat's live condition score.",
+              title: 'Check in',
+              desc: "At handover, walk through 5 systems — safety, rigging, engine, hull, interior. Flag issues, attach photos. Your check-in report updates the boat's condition assessment immediately and is visible to every future charterer.",
             },
             {
               step: '3',
               icon: '⭐',
               title: 'Review',
-              desc: 'At the end of your charter, leave a structured review with category ratings. Issues that persisted carry forward to the next sailor automatically.',
+              desc: 'At the end of your charter, leave a structured review with photos and category ratings. Your contribution — including the photos you took aboard — stays in the community record for the next sailor.',
             },
           ].map(({ step, icon, title, desc }) => (
             <div class="bg-[#F8F6F1] rounded-2xl p-8">
@@ -228,10 +228,10 @@ const structuredData = {
           <!-- Feature 1 -->
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Condition Score</p>
-              <h3 style="font-family:'Playfair Display',Georgia,serif" class="text-3xl font-bold text-[#1B3A5C] mb-5">A live health score for every boat.</h3>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Condition Assessment</p>
+              <h3 style="font-family:'Playfair Display',Georgia,serif" class="text-3xl font-bold text-[#1B3A5C] mb-5">See the boat's real condition before you board.</h3>
               <p class="text-[#6B7280] leading-relaxed mb-6">
-                Every pick-up report contributes to a severity-weighted condition score. Safety issues weigh more than cosmetic ones. The score updates as new reports come in — so a boat that's been repaired recovers its rating automatically.
+                Every boat profile shows a condition assessment built from community check-in reports. See open issues by system, photos taken by real charterers, and whether flagged problems have been resolved — all before you sign the charter contract.
               </p>
               <div class="space-y-3">
                 {[
@@ -248,7 +248,7 @@ const structuredData = {
               </div>
             </div>
             <div class="bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
-              <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-5">Live boat condition</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-5">Condition assessment</p>
               <div class="space-y-4">
                 {[
                   { name: 'Beneteau Oceanis 45', detail: 'No open issues', label: 'Good to go', color: '#10B981' },
@@ -270,14 +270,14 @@ const structuredData = {
           <!-- Feature 2 -->
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1 bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
-              <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-5">Pick-up report categories</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-5">Check-in categories</p>
               <div class="grid grid-cols-2 gap-3">
                 {[
                   { icon: '🛡', label: 'Safety' },
-                  { icon: '⛵', label: 'Rigging' },
-                  { icon: '⚙️', label: 'Engine' },
-                  { icon: '⚓', label: 'Hull' },
-                  { icon: '🛏', label: 'Interior' },
+                  { icon: '⛵', label: 'Sails & Rigging' },
+                  { icon: '⚙️', label: 'Engine & Electrics' },
+                  { icon: '⚓', label: 'Hull & Deck' },
+                  { icon: '🛏', label: 'Comfort & Cleanliness' },
                 ].map(({ icon, label }) => (
                   <div class="flex items-center gap-3 bg-[#F8F6F1] rounded-xl px-4 py-3">
                     <span>{icon}</span>
@@ -287,10 +287,10 @@ const structuredData = {
               </div>
             </div>
             <div class="order-1 md:order-2">
-              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Pick-up Report</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Check-in Report</p>
               <h3 style="font-family:'Playfair Display',Georgia,serif" class="text-3xl font-bold text-[#1B3A5C] mb-5">The handover moment, recorded.</h3>
               <p class="text-[#6B7280] leading-relaxed">
-                File your pick-up report before you cast off. Walk through five systems, flag what you find, and attach photos directly to each issue. Your report is timestamped, attached to the boat's permanent record, and visible to the next sailor.
+                File your check-in before you cast off. Walk through five systems, flag what you find, and attach photos directly to each issue. Your report is timestamped, attached to the boat's permanent record, and visible to the next sailor.
               </p>
             </div>
           </div>
@@ -301,7 +301,7 @@ const structuredData = {
               <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Reviews</p>
               <h3 style="font-family:'Playfair Display',Georgia,serif" class="text-3xl font-bold text-[#1B3A5C] mb-5">Reviews that actually cover what matters.</h3>
               <p class="text-[#6B7280] leading-relaxed">
-                Category ratings for sails, engine, navigation gear, safety equipment, and interior — not just a vibe score. Review items flag specific positives and persistent issues. Photos attached to the systems that matter, not just the sunset from the cockpit.
+                Category ratings for sails, engine, navigation gear, safety equipment, and comfort — from sailors who were actually aboard. Community photos attached to the systems that matter, not just the listing shots taken once at delivery. The most honest picture of a charter boat you'll find anywhere.
               </p>
             </div>
             <div class="bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
@@ -396,7 +396,7 @@ const structuredData = {
             },
             {
               q: 'How do I know reports are real?',
-              a: 'Pick-up reports are time-gated to your charter window — you can only file one within a day of your charter start date. Each report is tied to a verified charter plan.',
+              a: 'Check-in reports are time-gated to your charter window — you can only file one within a day of your charter start date. Each report is tied to a verified charter plan.',
             },
             {
               q: "I'm a charter company — is this bad for my fleet?",
