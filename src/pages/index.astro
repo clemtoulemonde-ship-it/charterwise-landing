@@ -2,27 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 
 const APP_STORE_URL = 'https://apps.apple.com/us/app/charterwise/id6761048802';
+const CONTACT_EMAIL = 'hello@charterwise.app';
+const REQUEST_ACCESS_URL = `mailto:${CONTACT_EMAIL}?subject=CharterWise%20Fleet%20%E2%80%94%20Early%20Access%20Request`;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "CharterWise",
   "operatingSystem": "iOS",
-  "applicationCategory": "TravelApplication",
+  "applicationCategory": "BusinessApplication",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Know your boat before you sail. CharterWise lets sailors research charter boats through real pick-up reports, condition scores, and community reviews.",
+  "description": "CharterWise gives charter companies fleet condition intelligence powered by guest check-in reports — open issues by system, photo evidence, and real condition scores across every boat.",
   "url": "https://charterwise.app",
   "screenshot": "https://charterwise.app/og-image.png",
-  "featureList": "Condition Assessment, Check-in Reports, Community Reviews, Community Photos",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "ratingCount": "1"
-  }
+  "featureList": "Fleet Condition Monitoring, Guest Check-in Reports, Issue Tracking, Condition Scores"
 };
 ---
 
@@ -41,13 +38,10 @@ const structuredData = {
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
       <a
-        href={APP_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="transition-opacity hover:opacity-80 active:opacity-60"
-        aria-label="Download on the App Store"
+        href={REQUEST_ACCESS_URL}
+        class="bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 active:scale-95 transition-all"
       >
-        <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-9" />
+        Request early access
       </a>
     </nav>
   </header>
@@ -62,39 +56,30 @@ const structuredData = {
       <div class="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center w-full">
         <div>
           <div class="inline-flex items-center gap-2 bg-white/10 text-white/90 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
-            Free on the App Store
+            Now in early access
           </div>
           <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            Know your boat<br />before you sail.
+            Fleet condition intelligence,<br />powered by your guests.
           </h1>
           <p class="text-white/75 text-lg leading-relaxed mb-10 max-w-lg">
-            The community-sourced condition record for charter boats. Real pick-up reports, five-system reviews, and a clear condition read on every boat. So you arrive knowing exactly what you're sailing into.
+            CharterWise turns every guest handover into structured fleet data — open issues by system, photo evidence, and a clear condition read on every boat in your fleet. No manual entry from your team.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="transition-opacity hover:opacity-80 active:opacity-60"
-              aria-label="Download on the App Store"
+              href={REQUEST_ACCESS_URL}
+              class="bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-base px-8 py-4 rounded-xl hover:opacity-90 active:scale-95 transition-all text-center"
             >
-              <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-14" />
-            </a>
-            <a
-              href="#android"
-              class="border border-white/40 hover:border-white/80 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all active:scale-95 text-center backdrop-blur-sm hover:bg-white/5"
-            >
-              Notify me on Android
+              Request early access
             </a>
           </div>
-          <p class="text-white/40 text-sm mt-4">Free · iOS · Android coming soon</p>
+          <p class="text-white/40 text-sm mt-4">Free during early access · No setup required</p>
         </div>
 
         <!-- Hero screenshot -->
         <div class="hidden md:flex justify-center">
           <div class="relative" style="width:240px">
             <div class="rounded-[36px] overflow-hidden border-[8px] border-[#111] shadow-2xl">
-              <img src="/screenshots/explore.png" alt="CharterWise Explore screen" class="w-full block" />
+              <img src="/screenshots/explore.png" alt="CharterWise fleet condition view" class="w-full block" />
             </div>
           </div>
         </div>
@@ -104,9 +89,9 @@ const structuredData = {
     <!-- Trust bar -->
     <section class="bg-white border-b border-[#E5E7EB]">
       <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm text-[#6B7280] font-medium">
-        <div class="flex items-center gap-2"><span>⚓</span> Community-driven</div>
-        <div class="flex items-center gap-2"><span>🛡</span> Real check-in reports</div>
-        <div class="flex items-center gap-2"><span>★</span> Verified charterer reviews</div>
+        <div class="flex items-center gap-2"><span>⚓</span> No manual data entry</div>
+        <div class="flex items-center gap-2"><span>🛡</span> Guest check-in reports</div>
+        <div class="flex items-center gap-2"><span>★</span> Condition scores by system</div>
       </div>
     </section>
 
@@ -115,17 +100,17 @@ const structuredData = {
       <div class="max-w-3xl mx-auto px-6 text-center">
         <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">The problem</p>
         <h2 class="text-4xl font-bold text-[#1B3A5C] mb-8 leading-tight">
-          You've arrived to a boat that wasn't ready.<br class="hidden sm:block" /> We've all been there.
+          Your fleet leaves the dock.<br class="hidden sm:block" /> What happens next is invisible to you.
         </h2>
         <div class="text-[#6B7280] text-lg leading-relaxed space-y-5 text-left">
           <p>
-            You book months in advance. You pack carefully. You brief the crew. Then you arrive at the marina and discover the engine cuts out above 2,000 rpm, the port head is blocked, and the main sail track is seized — none of which was mentioned in any listing.
+            You manage a fleet across one or more bases. Maintenance logs tell you what was serviced. They don't tell you what guests actually found when they stepped aboard — the seized furler, the intermittent engine alarm, the head that's been borderline for three rotations.
           </p>
           <p>
-            Charter companies have every incentive to minimise reported issues. Listing photos are taken once. Reviews on booking platforms rate the holiday, not the boat.
+            By the time an issue surfaces in a complaint or a damage deposit dispute, it's already been through a dozen handovers. You're always one step behind the condition of your own fleet.
           </p>
           <p class="font-semibold text-[#1B3A5C]">
-            CharterWise is built specifically for the handover moment: the check-in report, filed by the sailor who just stepped off.
+            CharterWise captures that moment automatically: a structured check-in report, filed by each guest at handover, feeding directly into your fleet's condition record.
           </p>
         </div>
       </div>
@@ -136,27 +121,27 @@ const structuredData = {
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
           <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">How it works</p>
-          <h2 class="text-4xl font-bold text-[#1B3A5C]">The charter journey, finally tracked.</h2>
+          <h2 class="text-4xl font-bold text-[#1B3A5C]">Fleet condition tracking, finally automated.</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
           {[
             {
               step: '1',
-              icon: '🔍',
-              title: 'Discover',
-              desc: "Search boats and read community check-in reports before you book. Every boat profile shows a condition assessment — open issues by system, photos from real charterers, and whether flagged problems have been fixed.",
+              icon: '⚓',
+              title: 'Your fleet, always visible',
+              desc: "Every boat in your fleet has a live condition profile — open issues by system, photos from real handovers, and a clear condition score updated after every check-in. No manual entry from your team.",
             },
             {
               step: '2',
               icon: '📋',
-              title: 'Check in',
-              desc: "At handover, walk through 5 systems — safety, rigging, engine, hull, interior. Flag issues, attach photos. Your check-in report updates the boat's condition assessment immediately and is visible to every future charterer.",
+              title: 'Guests report at handover',
+              desc: "At check-in, guests walk through 5 systems — safety, rigging, engine, hull, interior. They flag issues and attach photos. Each report is timestamped and attached to that boat's permanent record automatically.",
             },
             {
               step: '3',
-              icon: '⭐',
-              title: 'Review',
-              desc: 'At the end of your charter, leave a structured review with photos and category ratings. Your contribution — including the photos you took aboard — stays in the community record for the next sailor.',
+              icon: '🔔',
+              title: 'Issues surface, not surprises',
+              desc: "When an issue recurs across multiple check-ins, it surfaces in the condition score. Recurring problems become visible before they become complaints — giving your maintenance team data to act on.",
             },
           ].map(({ step, icon, title, desc }) => (
             <div class="bg-[#F8F6F1] rounded-2xl p-8">
@@ -222,7 +207,7 @@ const structuredData = {
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
           <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">Features</p>
-          <h2 class="text-4xl font-bold text-[#1B3A5C]">Built for sailors, by sailors.</h2>
+          <h2 class="text-4xl font-bold text-[#1B3A5C]">Fleet intelligence that runs itself.</h2>
         </div>
 
         <div class="space-y-20">
@@ -230,9 +215,9 @@ const structuredData = {
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Condition Assessment</p>
-              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">See the boat's real condition before you board.</h3>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Every boat in your fleet, always visible.</h3>
               <p class="text-[#6B7280] leading-relaxed mb-6">
-                Every boat profile shows a condition assessment built from community check-in reports — open issues by system and photos from real charterers, all before you sign the contract. And at check-in, issues flagged by the previous sailor surface automatically in your report, so nothing slips through at handover.
+                Every boat profile shows a live condition assessment built from guest check-in reports — open issues by system and photos from real handovers. When an issue is flagged in one check-in, it automatically surfaces in the next guest's report so nothing slips between rotations.
               </p>
               <div class="space-y-3">
                 {[
@@ -265,7 +250,7 @@ const structuredData = {
               </div>
               <!-- Check-in card -->
               <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm">
-                <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">At check-in</p>
+                <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">At next handover</p>
                 <div class="bg-[#FFFBEB] border border-[#F59E0B33] rounded-xl px-4 py-3 mb-3">
                   <p class="text-xs font-semibold text-[#6B7280] mb-1">Issue from previous report · #1</p>
                   <p class="text-sm font-semibold text-[#111827]">Lines are worn out</p>
@@ -305,7 +290,7 @@ const structuredData = {
               <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Check-in Report</p>
               <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">The handover moment, recorded.</h3>
               <p class="text-[#6B7280] leading-relaxed">
-                File your check-in before you cast off. Walk through five systems, flag what you find, and attach photos directly to each issue. Your report is timestamped, attached to the boat's permanent record, and visible to the next sailor.
+                Guests walk through five systems at handover, flag what they find, and attach photos directly to each issue. Reports are timestamped and attached to each boat's permanent record automatically — no manual entry from your team.
               </p>
             </div>
           </div>
@@ -314,9 +299,9 @@ const structuredData = {
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Reviews</p>
-              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Reviews that actually cover what matters.</h3>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Structured feedback your team can act on.</h3>
               <p class="text-[#6B7280] leading-relaxed">
-                Category ratings for sails, engine, navigation gear, safety equipment, and comfort — from sailors who were actually aboard. Community photos attached to the systems that matter, not just the listing shots taken once at delivery. The most honest picture of a charter boat you'll find anywhere.
+                Category ratings across five systems — safety, rigging, engine, hull, comfort — with photos attached to the specific systems that matter. Not a holiday rating: structured condition data your maintenance team can use to prioritise work between rotations.
               </p>
             </div>
             <div class="bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
@@ -350,41 +335,17 @@ const structuredData = {
       </div>
     </section>
 
-    <!-- DOWNLOAD CTA -->
-    <section id="android" class="bg-[#1B3A5C] py-24">
+    <!-- REQUEST ACCESS CTA -->
+    <section class="bg-[#1B3A5C] py-24">
       <div class="max-w-2xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold text-white mb-5">Ready to charter smarter?</h2>
-        <p class="text-white/70 text-lg mb-10">Free on the App Store — no subscription.</p>
-
+        <h2 class="text-4xl font-bold text-white mb-5">Ready to see your fleet through your guests' eyes?</h2>
+        <p class="text-white/70 text-lg mb-10">Free during early access. No setup required — we onboard your fleet together.</p>
         <a
-          href={APP_STORE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block transition-opacity hover:opacity-80 active:opacity-60 mb-14"
-          aria-label="Download on the App Store"
+          href={REQUEST_ACCESS_URL}
+          class="inline-block bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-lg px-10 py-4 rounded-xl hover:opacity-90 active:scale-95 transition-all"
         >
-          <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-16" />
+          Request early access
         </a>
-
-        <div class="border-t border-white/20 pt-10">
-          <p class="text-white/80 font-semibold mb-1">Android coming soon</p>
-          <p class="text-white/50 text-sm mb-6">Leave your email and we'll notify you the moment it's live.</p>
-          <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              required
-              class="flex-1 bg-white/10 border border-white/20 text-white placeholder-white/40 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#D4A843] transition-colors"
-            />
-            <button
-              type="submit"
-              class="bg-white text-[#1B3A5C] font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-[#F8F6F1] transition-colors whitespace-nowrap"
-            >
-              Notify me
-            </button>
-          </form>
-          <p id="waitlist-confirm" class="text-[#D4A843] text-sm mt-3 hidden">You're on the list — we'll be in touch!</p>
-        </div>
       </div>
     </section>
 
@@ -398,28 +359,24 @@ const structuredData = {
         <div class="space-y-3">
           {[
             {
+              q: 'What does setup look like for my fleet?',
+              a: 'We onboard your fleet together — typically one short call. We add your boats to the database, and from that point guests can start filing check-in reports automatically. No integration or technical setup required on your side.',
+            },
+            {
+              q: 'How does my fleet data stay private?',
+              a: "Condition reports and issue data are visible to guests who charter your boats and to you. We are building a fleet dashboard that will give you direct access to your fleet's condition data. Your fleet is not searchable by competitors or the general public beyond what a booked guest can see.",
+            },
+            {
+              q: 'Can I respond to reported issues?',
+              a: "Not yet — but this is on the roadmap. When an issue is marked as fixed by a subsequent guest, the condition score updates immediately. The fleet dashboard (in development) will let you log maintenance actions directly against open issues.",
+            },
+            {
               q: 'Is CharterWise free?',
-              a: 'Yes — completely free. No subscription, no in-app purchases.',
+              a: 'Free during early access. We are building the product with our first fleet partners before introducing any paid tiers — your feedback shapes what gets built.',
             },
             {
               q: 'Why did you create CharterWise?',
-              a: "I've chartered many boats across the Mediterranean, Caribbean, and beyond. Every single time, I arrived hoping for context about the boat's true condition — and almost never had it. I'd step on board to discover seized gear, engine issues, or safety equipment that wasn't ready. This app is built specifically for that moment. I wanted to create a community-sourced record so the next sailor — and the next — has the clarity I didn't.",
-            },
-            {
-              q: 'What boats are in the database?',
-              a: 'Mediterranean and Adriatic. Coverage grows with every pick-up report filed.',
-            },
-            {
-              q: 'How do I know reports are real?',
-              a: 'Check-in reports are time-gated to your charter window — you can only file one within a day of your charter start date. Each report is tied to a verified charter plan.',
-            },
-            {
-              q: "I'm a charter company — is this bad for my fleet?",
-              a: "Only if your fleet isn't maintained. Companies with well-kept boats will be rewarded in the data. Issues that get fixed improve the condition score immediately.",
-            },
-            {
-              q: 'When is Android available?',
-              a: "Soon. Sign up for the waitlist above and you'll be the first to know.",
+              a: "I've chartered many boats across the Mediterranean, Caribbean, and beyond. Every time, I arrived without context about the boat's true condition. I built CharterWise to capture the handover moment — and realised the data is just as valuable to the company running the fleet as it is to the sailor stepping aboard.",
             },
           ].map(({ q, a }) => (
             <details class="group bg-[#F8F6F1] rounded-xl border border-[#E5E7EB] overflow-hidden">
@@ -442,31 +399,24 @@ const structuredData = {
         <img src="/icon.png" alt="CharterWise" class="h-6 w-6 rounded-md object-cover opacity-80" />
         <span>
           <span class="font-bold text-white">CharterWise</span>
-          <span class="ml-2">— Know your boat before you sail.</span>
+          <span class="ml-2">— Fleet condition intelligence for charter companies.</span>
         </span>
       </div>
       <div class="flex items-center gap-6">
         <a href="/about" class="hover:text-white transition-colors">About</a>
         <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
         <a href="mailto:hello@charterwise.app" class="hover:text-white transition-colors">Contact</a>
-        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">App Store</a>
       </div>
     </div>
-    <p class="max-w-6xl mx-auto px-6 mt-6 text-xs text-white/30 text-center sm:text-left">
-      © {new Date().getFullYear()} CharterWise. Built by sailors, for sailors.
-    </p>
+    <div class="max-w-6xl mx-auto px-6 mt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p class="text-xs text-white/30">© {new Date().getFullYear()} CharterWise.</p>
+      <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-xs text-white/30 hover:text-white/60 transition-colors">
+        Are you a sailor? Get the app →
+      </a>
+    </div>
   </footer>
 
   <script>
-    const form = document.getElementById('waitlist-form') as HTMLFormElement | null;
-    const confirm = document.getElementById('waitlist-confirm');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // TODO: wire to Mailchimp API endpoint
-      if (form) form.style.display = 'none';
-      if (confirm) confirm.classList.remove('hidden');
-    });
-
     // Lightbox
     const lightbox = document.getElementById('lightbox')!;
     const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
@@ -509,5 +459,5 @@ const structuredData = {
       if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
       if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
     });
-</script>
+  </script>
 </Layout>
