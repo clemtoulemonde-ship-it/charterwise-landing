@@ -2,24 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 
 const APP_STORE_URL = 'https://apps.apple.com/us/app/charterwise/id6761048802';
+const FLEET_LOGIN_URL = 'https://fleet.charterwise.app';
 const CONTACT_EMAIL = 'hello@charterwise.app';
-const REQUEST_ACCESS_URL = `mailto:${CONTACT_EMAIL}?subject=CharterWise%20Fleet%20%E2%80%94%20Getting%20in%20touch`;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "CharterWise",
-  "operatingSystem": "iOS",
+  "name": "CharterWise Fleet",
+  "operatingSystem": "Web",
   "applicationCategory": "BusinessApplication",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "CharterWise gives charter companies fleet condition intelligence powered by guest check-in reports — open issues by system, photo evidence, and real condition scores across every boat.",
+  "description": "CharterWise Fleet gives charter companies a clear, verified read on fleet condition — captured at every digital handover, scored system by system, and prioritized by what needs attention next.",
   "url": "https://charterwise.app",
   "screenshot": "https://charterwise.app/og-image.png",
-  "featureList": "Fleet Condition Monitoring, Guest Check-in Reports, Issue Tracking, Condition Scores"
+  "featureList": "Condition Dashboard, Vessel Management, Digital Handover & E-signature, Team & Multi-Base Access, Maintenance Queue"
 };
 ---
 
@@ -37,18 +37,28 @@ const structuredData = {
         <a href="#features" class="hover:text-white transition-colors">Features</a>
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
-      <a
-        href={REQUEST_ACCESS_URL}
-        class="bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 active:scale-95 transition-all"
-      >
-        Get in touch
-      </a>
+      <div class="flex items-center gap-3">
+        <a
+          href={FLEET_LOGIN_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex text-white/70 hover:text-white text-sm font-semibold transition-colors"
+        >
+          Log in
+        </a>
+        <a
+          href="#contact"
+          class="bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 active:scale-95 transition-all"
+        >
+          Get in touch
+        </a>
+      </div>
     </nav>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="relative bg-gradient-to-b from-[#1B3A5C] via-[#16304E] to-[#0F2642] text-white min-h-[90vh] flex items-center overflow-hidden">
+    <section class="relative bg-gradient-to-b from-[#1B3A5C] via-[#16304E] to-[#0F2642] text-white min-h-[88vh] flex items-center overflow-hidden">
       <div class="absolute inset-0 opacity-3"
         style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 32px 32px;">
       </div>
@@ -56,31 +66,31 @@ const structuredData = {
       <div class="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center w-full">
         <div>
           <div class="inline-flex items-center gap-2 bg-white/10 text-white/90 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
-            Now accepting fleet partners
+            For charter companies &amp; yacht fleets
           </div>
           <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            Fleet condition intelligence,<br />powered by your guests.
+            A clear, accurate read on your fleet's health —<br />improving with every charter.
           </h1>
           <p class="text-white/75 text-lg leading-relaxed mb-10 max-w-lg">
-            CharterWise turns every guest handover into structured fleet data — open issues by system, photo evidence, and a clear condition read on every boat in your fleet. No manual entry from your team.
+            As a Base Manager, CharterWise Fleet shows you exactly where every boat stands today, verified at every handover — not projected from a maintenance log. See what's improving, what needs attention, and make sure the next charterer steps onto a better boat than the last one did.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <a
-              href={REQUEST_ACCESS_URL}
+              href="#contact"
               class="bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-base px-8 py-4 rounded-xl hover:opacity-90 active:scale-95 transition-all text-center"
             >
               Get in touch
             </a>
+            <a href="#features" class="text-white/70 hover:text-white text-sm font-semibold transition-colors">
+              See what's included ↓
+            </a>
           </div>
-          <p class="text-white/40 text-sm mt-4">Free · No setup required</p>
         </div>
 
-        <!-- Hero screenshot -->
-        <div class="hidden md:flex justify-center">
-          <div class="relative" style="width:240px">
-            <div class="rounded-[36px] overflow-hidden border-[8px] border-[#111] shadow-2xl">
-              <img src="/screenshots/explore.png" alt="CharterWise fleet condition view" class="w-full block" />
-            </div>
+        <!-- Hero screenshot: the real Fleet dashboard -->
+        <div class="hidden md:block">
+          <div class="relative w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            <img src="/screenshots-fleet/dashboard.jpg" alt="CharterWise Fleet condition dashboard" class="w-full block" />
           </div>
         </div>
       </div>
@@ -88,10 +98,11 @@ const structuredData = {
 
     <!-- Trust bar -->
     <section class="bg-white border-b border-[#E5E7EB]">
-      <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm text-[#6B7280] font-medium">
-        <div class="flex items-center gap-2"><span>⚓</span> No manual data entry</div>
-        <div class="flex items-center gap-2"><span>🛡</span> Guest check-in reports</div>
-        <div class="flex items-center gap-2"><span>★</span> Condition scores by system</div>
+      <div class="max-w-6xl mx-auto px-6 py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-[#6B7280] font-medium">
+        <div class="flex items-center gap-2"><span>✍️</span> Digital handover &amp; e-signature</div>
+        <div class="flex items-center gap-2"><span>★</span> Verified at every handover, not self-reported</div>
+        <div class="flex items-center gap-2"><span>🔧</span> Issues prioritized by next charter</div>
+        <div class="flex items-center gap-2"><span>👥</span> Role-scoped team access</div>
       </div>
     </section>
 
@@ -100,19 +111,29 @@ const structuredData = {
       <div class="max-w-3xl mx-auto px-6 text-center">
         <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">The problem</p>
         <h2 class="text-4xl font-bold text-[#1B3A5C] mb-8 leading-tight">
-          Your fleet leaves the dock.<br class="hidden sm:block" /> What happens next is invisible to you.
+          You want your fleet to keep getting better.<br class="hidden sm:block" /> You can't tell if it actually is.
         </h2>
         <div class="text-[#6B7280] text-lg leading-relaxed space-y-5 text-left">
           <p>
-            You manage a fleet across one or more bases. Maintenance logs tell you what was serviced. They don't tell you what guests actually found when they stepped aboard — the seized furler, the intermittent engine alarm, the head that's been borderline for three rotations.
+            A boat comes back at 10am. Another guest is due at 5pm. As a Base Manager, your job is to keep every boat in better shape than the charter before — but your team walks it with a paper clipboard: no photos worth keeping, no timestamp, no record beyond a signature. If a fender's missing or the watermaker's dead, it's a phone call and a guess. Multiply that across every base, every Saturday.
           </p>
           <p>
-            By the time an issue surfaces in a complaint or a damage deposit dispute, it's already been through a dozen handovers. You're always one step behind the condition of your own fleet.
+            Three weeks later, when a deposit dispute lands or the same issue turns up on a different boat, there's nothing to point back to — and no way to tell whether your fleet's overall condition is actually trending up or down.
           </p>
           <p class="font-semibold text-[#1B3A5C]">
-            CharterWise captures that moment automatically: a structured check-in report, filed by each guest at handover, feeding directly into your fleet's condition record.
+            CharterWise Fleet replaces the clipboard with a digital handover that captures verified condition data as it happens — so you always have an accurate, current read on every boat, and can see what's improving before the next charter starts.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- DIFFERENTIATOR PULL-QUOTE -->
+    <section class="bg-[#0F2642] py-16">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <p class="text-white text-2xl md:text-3xl font-bold leading-snug">
+          Real, verified condition data on every boat you run —
+          <span class="text-[#D4A843]">captured handover to handover, so you always know exactly where your fleet stands.</span>
+        </p>
       </div>
     </section>
 
@@ -121,27 +142,27 @@ const structuredData = {
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
           <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">How it works</p>
-          <h2 class="text-4xl font-bold text-[#1B3A5C]">Fleet condition tracking, finally automated.</h2>
+          <h2 class="text-4xl font-bold text-[#1B3A5C]">Fleet operations, finally in one system.</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
           {[
             {
               step: '1',
               icon: '⚓',
-              title: 'Your fleet, always visible',
-              desc: "Every boat in your fleet has a live condition profile — open issues by system, photos from real handovers, and a clear condition score updated after every check-in. No manual entry from your team.",
+              title: 'Set up your fleet & team',
+              desc: 'Add every boat you run, then invite your team with the right access — Admin, Base Manager, Skipper, Billing, or Vessel Owner. Each role sees exactly what it needs to.',
             },
             {
               step: '2',
-              icon: '📋',
-              title: 'Guests report at handover',
-              desc: "At check-in, guests walk through 5 systems — safety, rigging, engine, hull, interior. They flag issues and attach photos. Each report is timestamped and attached to that boat's permanent record automatically.",
+              icon: '✍️',
+              title: 'Guests check in — digitally, signed',
+              desc: 'At handover, guests walk through 5 systems, flag issues with photos, and sign off electronically — no app download required. A branded PDF report is generated as it happens.',
             },
             {
               step: '3',
-              icon: '🔔',
-              title: 'Issues surface, not surprises',
-              desc: "When an issue recurs across multiple check-ins, it surfaces in the condition score. Recurring problems become visible before they become complaints — giving your maintenance team data to act on.",
+              icon: '🔧',
+              title: 'Issues surface, your team acts',
+              desc: "Recurring issues surface in your fleet's condition score, and clear when the next guest confirms a fix held. You always know whether things are trending up before the next charter starts.",
             },
           ].map(({ step, icon, title, desc }) => (
             <div class="bg-[#F8F6F1] rounded-2xl p-8">
@@ -159,193 +180,202 @@ const structuredData = {
       </div>
     </section>
 
-    <!-- SCREENSHOTS -->
-    <section class="bg-[#F8F6F1] py-24 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">The app</p>
-          <h2 class="text-4xl font-bold text-[#1B3A5C]">See it in action.</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-4 justify-items-center">
-          {[
-            { src: '/screenshots/explore.png', label: 'Explore boats' },
-            { src: '/screenshots/boat-detail.png', label: 'Boat profile' },
-            { src: '/screenshots/pickup-report.png', label: 'Condition Assessment' },
-            { src: '/screenshots/reviews.png', label: 'Reviews' },
-            { src: '/screenshots/checkin.png', label: 'Check-in report' },
-            { src: '/screenshots/home.png', label: 'Start a check-in' },
-          ].map(({ src, label }) => (
-            <div class="flex flex-col items-center gap-3 w-full max-w-[160px]">
-              <button
-                class="screenshot-thumb rounded-[32px] overflow-hidden border-[7px] border-[#111] shadow-xl w-full cursor-zoom-in transition-transform hover:scale-105"
-                data-src={src}
-                data-label={label}
-                aria-label={`View ${label} screenshot`}
-              >
-                <img src={src} alt={label} class="w-full block pointer-events-none" />
-              </button>
-              <p class="text-xs font-semibold text-[#6B7280] uppercase tracking-wider">{label}</p>
-            </div>
-          ))}
-        </div>
-
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true">
-          <button id="lightbox-close" class="absolute top-4 right-5 text-white/70 hover:text-white text-3xl leading-none" aria-label="Close">&times;</button>
-          <button id="lightbox-prev" class="absolute left-3 md:left-6 text-white/70 hover:text-white text-4xl leading-none px-2 py-4" aria-label="Previous">&#8249;</button>
-          <button id="lightbox-next" class="absolute right-3 md:right-6 text-white/70 hover:text-white text-4xl leading-none px-2 py-4" aria-label="Next">&#8250;</button>
-          <div class="relative max-h-full flex flex-col items-center gap-4">
-            <img id="lightbox-img" src="" alt="" class="max-h-[85vh] w-auto rounded-[28px] border-[6px] border-[#111] shadow-2xl" />
-            <p id="lightbox-label" class="text-white/70 text-sm font-semibold uppercase tracking-wider"></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- FEATURES -->
     <section id="features" class="bg-[#F8F6F1] py-24">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
           <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">Features</p>
-          <h2 class="text-4xl font-bold text-[#1B3A5C]">Fleet intelligence that runs itself.</h2>
+          <h2 class="text-4xl font-bold text-[#1B3A5C]">Everything your fleet operation runs on.</h2>
         </div>
 
         <div class="space-y-20">
-          <!-- Feature 1 -->
+
+          <!-- Feature 1: Condition Dashboard -->
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Condition Assessment</p>
-              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Every boat in your fleet, always visible.</h3>
-              <p class="text-[#6B7280] leading-relaxed mb-6">
-                Every boat profile shows a live condition assessment built from guest check-in reports — open issues by system and photos from real handovers. When an issue is flagged in one check-in, it automatically surfaces in the next guest's report so nothing slips between rotations.
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Condition Dashboard</p>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Your whole fleet, always visible.</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                A live condition score for every boat you run, built from real handover and check-in reports — entered once, by whoever's actually there (guest, skipper, or base manager), never re-compiled by your team afterward. Sorted worst-first, so you see what needs attention without hunting for it.
               </p>
-              <div class="space-y-3">
-                {[
-                  { color: '#10B981', label: 'Good to go', desc: 'No significant open issues' },
-                  { color: '#F59E0B', label: 'Minor things', desc: 'Some non-critical issues flagged' },
-                ].map(({ color, label, desc }) => (
-                  <div class="flex items-center gap-4 bg-white rounded-xl px-4 py-3 border border-[#E5E7EB]">
-                    <span class="w-3 h-3 rounded-full flex-shrink-0" style={`background:${color}`}></span>
-                    <span class="font-semibold text-sm" style={`color:${color}`}>{label}</span>
-                    <span class="text-sm text-[#6B7280]">— {desc}</span>
-                  </div>
-                ))}
-              </div>
             </div>
-            <div class="space-y-4">
-              <!-- Boat profile card -->
+            <div class="rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+              <img src="/screenshots-fleet/dashboard.jpg" alt="Fleet condition dashboard" class="w-full block" />
+              <p class="text-xs text-[#9CA3AF] text-center py-2 bg-white">This is what a charter company logs into today — not a mockup.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2: Vessel roster -->
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+              <img src="/screenshots-fleet/vessel-detail.jpg" alt="Vessel detail and management" class="w-full block" />
+            </div>
+            <div class="order-1 md:order-2">
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Vessel Management</p>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Every boat, scored system by system.</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Open issues broken down by Safety, Sails &amp; Rigging, Engine &amp; Electrics, Hull &amp; Deck, and Comfort &amp; Cleanliness, tracked straight back to the handover that found them — no paper clipboard, no guesswork. When an issue is flagged, it resurfaces at the next check-in, so you always know if a fix actually held, boat by boat.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 3: Digital Handover + deposits -->
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Digital Handover</p>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">The handover moment, signed and stored.</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                One click sends the branded pre-charter pack straight from a booking. Guests review the boat and sign off through a no-login web link — no app to install, just whatever device they already have in hand. A branded PDF handover report is generated and stored as it happens, and any deposit is tracked against it from pickup to return.
+              </p>
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+              <img src="/screenshots-fleet/send-pack.jpg" alt="Send guest handover pack from a booking" class="w-full block" />
+            </div>
+          </div>
+
+          <!-- Feature 4: Team & multi-base -->
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+              <img src="/screenshots-fleet/team.jpg" alt="Team and multi-base member management" class="w-full block" />
+            </div>
+            <div class="order-1 md:order-2">
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Team &amp; Multi-Base</p>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">The right access, for every role.</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Invite your team with scoped roles — Admin, Base Manager, Skipper, Billing, or Vessel Owner. A Base Manager only ever sees their own base's boats and staff; a Skipper only sees their assigned vessel. A real permission structure, not a flat user list.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 5: Maintenance queue (illustrative mockup, feature in active development) -->
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Maintenance Queue <span class="text-[#6B7280] normal-case font-semibold tracking-normal">— in development</span></p>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Fixed in time for whoever's next.</h3>
+              <p class="text-[#6B7280] leading-relaxed">
+                Issues raised at handover route straight into a fleet-wide queue, prioritized by each boat's <span class="font-semibold text-[#111827]">next confirmed charter</span> — not who filed first or shouted loudest. Assign a fix to a base manager or let staff self-claim it; either way, your team always knows which job actually matters today, so the guest stepping aboard next gets a boat that's ready, not just next in line.
+              </p>
+            </div>
+            <div class="space-y-3">
               <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm">
-                <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">On the boat profile</p>
-                <div class="flex items-start justify-between mb-3">
+                <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">Maintenance queue · sorted by next charter</p>
+                <div class="flex items-center justify-between bg-[#FDECEC] border border-[#EF444433] rounded-xl px-4 py-3 mb-2">
                   <div>
-                    <p class="font-bold text-sm text-[#111827]">Inishmore</p>
-                    <p class="text-xs text-[#6B7280]">Lagoon 42 · Catamaran · Split, Croatia</p>
+                    <p class="text-xs font-semibold text-[#6B7280] mb-0.5">Inishmore · Sails &amp; Rigging</p>
+                    <p class="text-sm font-semibold text-[#111827]">Lines are worn out</p>
+                    <p class="text-xs font-bold text-[#C6342E] mt-1">Next charter: tomorrow</p>
                   </div>
-                  <span class="text-xs font-bold px-2.5 py-1 rounded-full" style="color:#F59E0B; background:#F59E0B18">Minor things</span>
+                  <span class="text-xs font-bold px-2.5 py-1 rounded-full text-[#B45309] bg-[#F59E0B18]">Unassigned</span>
                 </div>
-                <div class="bg-[#F8F6F1] rounded-xl px-4 py-3">
-                  <p class="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-1.5">Sails &amp; Rigging</p>
-                  <p class="text-sm text-[#111827]">Lines are worn out</p>
-                </div>
-              </div>
-              <!-- Check-in card -->
-              <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm">
-                <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">At next handover</p>
-                <div class="bg-[#FFFBEB] border border-[#F59E0B33] rounded-xl px-4 py-3 mb-3">
-                  <p class="text-xs font-semibold text-[#6B7280] mb-1">Issue from previous report · #1</p>
-                  <p class="text-sm font-semibold text-[#111827]">Lines are worn out</p>
-                </div>
-                <div class="flex gap-2">
-                  <div class="flex-1 flex items-center justify-center gap-1.5 border border-[#E5E7EB] rounded-lg px-3 py-2 text-xs font-semibold text-[#6B7280]">
-                    <span>✓</span> Looks fixed
+                <div class="flex items-center justify-between bg-[#F8F6F1] rounded-xl px-4 py-3">
+                  <div>
+                    <p class="text-xs font-semibold text-[#6B7280] mb-0.5">Aurora · Engine &amp; Electrics</p>
+                    <p class="text-sm font-semibold text-[#111827]">Intermittent alarm on start</p>
+                    <p class="text-xs font-bold text-[#6B7280] mt-1">Next charter: in 12 days</p>
                   </div>
-                  <div class="flex-1 flex items-center justify-center gap-1.5 border border-[#E5E7EB] rounded-lg px-3 py-2 text-xs font-semibold text-[#6B7280]">
-                    <span>⚑</span> Still there
-                  </div>
+                  <span class="text-xs font-bold px-2.5 py-1 rounded-full text-[#0B7E73] bg-[#0D948818]">Assigned · Christos</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Feature 2 -->
+          <!-- Feature 6: Fleet Mobile teaser (no real build yet — text only, see README note) -->
           <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1 bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
-              <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-5">Check-in categories</p>
-              <div class="grid grid-cols-2 gap-3">
-                {[
-                  { icon: '🛡', label: 'Safety' },
-                  { icon: '⛵', label: 'Sails & Rigging' },
-                  { icon: '⚙️', label: 'Engine & Electrics' },
-                  { icon: '⚓', label: 'Hull & Deck' },
-                  { icon: '🛏', label: 'Comfort & Cleanliness' },
-                ].map(({ icon, label }) => (
-                  <div class="flex items-center gap-3 bg-[#F8F6F1] rounded-xl px-4 py-3">
-                    <span>{icon}</span>
-                    <span class="font-semibold text-sm text-[#1B3A5C]">{label}</span>
-                  </div>
-                ))}
+            <div class="order-2 md:order-1 flex justify-center">
+              <div class="w-full max-w-[280px] rounded-2xl border border-[#E5E7EB] bg-white shadow-sm p-8 flex flex-col items-center text-center gap-3">
+                <span class="text-4xl">📱</span>
+                <p class="text-xs font-bold uppercase tracking-widest text-[#6B7280]">Fleet Mobile</p>
+                <p class="text-sm text-[#9CA3AF]">Screens coming soon as the app rolls out</p>
               </div>
             </div>
             <div class="order-1 md:order-2">
-              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Check-in Report</p>
-              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">The handover moment, recorded.</h3>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Fleet Mobile <span class="text-[#6B7280] normal-case font-semibold tracking-normal">— in development</span></p>
+              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Built for the dock, not the office.</h3>
               <p class="text-[#6B7280] leading-relaxed">
-                Guests walk through five systems at handover, flag what they find, and attach photos directly to each issue. Reports are timestamped and attached to each boat's permanent record automatically — no manual entry from your team.
+                A dedicated app for your skippers and base managers — run handovers, capture signatures, and flag issues from the boat itself, even offline. Until it's rolled out to your fleet, every handover runs the same way from the Fleet web dashboard on any device. See it below.
               </p>
             </div>
           </div>
 
-          <!-- Feature 3 -->
-          <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-3">Reviews</p>
-              <h3 class="text-3xl font-bold text-[#1B3A5C] mb-5">Structured feedback your team can act on.</h3>
-              <p class="text-[#6B7280] leading-relaxed">
-                Category ratings across five systems — safety, rigging, engine, hull, comfort — with photos attached to the specific systems that matter. Not a holiday rating: structured condition data your maintenance team can use to prioritise work between rotations.
-              </p>
-            </div>
-            <div class="bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
-              <div class="flex items-start justify-between mb-5">
-                <div>
-                  <p class="font-bold text-[#111827]">Beneteau Oceanis 45</p>
-                  <p class="text-sm text-[#6B7280]">Croatia · June 2025 · 7 days</p>
-                </div>
-                <span class="text-[#D4A843] text-lg">★★★★☆</span>
-              </div>
-              <div class="space-y-3">
-                {[
-                  { label: 'Safety', rating: 5 },
-                  { label: 'Rigging', rating: 5 },
-                  { label: 'Engine', rating: 4 },
-                  { label: 'Hull', rating: 4 },
-                  { label: 'Comfort', rating: 4 },
-                ].map(({ label, rating }) => (
-                  <div class="flex items-center gap-3">
-                    <span class="text-sm text-[#6B7280] w-24 flex-shrink-0">{label}</span>
-                    <div class="flex-1 bg-[#F5F5F5] rounded-full h-1.5">
-                      <div class="bg-[#D4A843] h-1.5 rounded-full" style={`width:${rating / 5 * 100}%`}></div>
-                    </div>
-                    <span class="text-sm font-semibold text-[#111827]">{rating}/5</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- REQUEST ACCESS CTA -->
-    <section class="bg-[#1B3A5C] py-24">
-      <div class="max-w-2xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold text-white mb-5">Ready to see your fleet through your guests' eyes?</h2>
-        <p class="text-white/70 text-lg mb-10">Free to use. No setup required — we onboard your fleet together.</p>
-        <a
-          href={REQUEST_ACCESS_URL}
-          class="inline-block bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-lg px-10 py-4 rounded-xl hover:opacity-90 active:scale-95 transition-all"
-        >
-          Get in touch
-        </a>
+    <!-- SEE IT IN ACTION: web dashboard -->
+    <section class="bg-white py-24 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold uppercase tracking-widest text-[#D4A843] mb-4">The web dashboard</p>
+          <h2 class="text-4xl font-bold text-[#1B3A5C] mb-4">This is what your team logs into.</h2>
+          <p class="text-[#6B7280] max-w-2xl mx-auto">The same fleet data your office runs the business on — no separate system to keep in sync.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <figure class="rounded-xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+            <div class="h-56 overflow-hidden"><img src="/screenshots-fleet/send-pack.jpg" alt="Send guest handover pack" class="w-full h-full object-cover object-top" /></div>
+            <figcaption class="text-xs font-semibold text-[#6B7280] uppercase tracking-wider text-center py-3 bg-[#F8F6F1]">Send guest pack</figcaption>
+          </figure>
+          <figure class="rounded-xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+            <div class="h-56 overflow-hidden"><img src="/screenshots-fleet/vessel-detail.jpg" alt="Vessel detail" class="w-full h-full object-cover object-top" /></div>
+            <figcaption class="text-xs font-semibold text-[#6B7280] uppercase tracking-wider text-center py-3 bg-[#F8F6F1]">Vessel detail</figcaption>
+          </figure>
+          <figure class="rounded-xl overflow-hidden border border-[#E5E7EB] shadow-sm">
+            <div class="h-56 overflow-hidden"><img src="/screenshots-fleet/team.jpg" alt="Team management" class="w-full h-full object-cover object-top" /></div>
+            <figcaption class="text-xs font-semibold text-[#6B7280] uppercase tracking-wider text-center py-3 bg-[#F8F6F1]">Team &amp; access</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM (replaces mailto CTA) -->
+    <section id="contact" class="bg-[#1B3A5C] py-24">
+      <div class="max-w-xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <h2 class="text-4xl font-bold text-white mb-4">Ready for a clear, accurate read on your fleet?</h2>
+          <p class="text-white/70 text-lg">Tell us a bit about your fleet — we'll get back to you directly.</p>
+        </div>
+
+        <form id="fleet-contact-form" class="bg-white rounded-2xl p-8 shadow-2xl space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-1.5" for="cf-name">Your name</label>
+              <input id="cf-name" name="name" required type="text" class="w-full rounded-lg border border-[#E5E7EB] px-3.5 py-2.5 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#D4A843]/40 focus:border-[#D4A843]" placeholder="Irini Castellanos" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-1.5" for="cf-email">Work email</label>
+              <input id="cf-email" name="work_email" required type="email" class="w-full rounded-lg border border-[#E5E7EB] px-3.5 py-2.5 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#D4A843]/40 focus:border-[#D4A843]" placeholder="you@fleet.com" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-1.5" for="cf-company">Company name</label>
+              <input id="cf-company" name="company_name" required type="text" class="w-full rounded-lg border border-[#E5E7EB] px-3.5 py-2.5 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#D4A843]/40 focus:border-[#D4A843]" placeholder="Dream Yacht Charter" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-1.5" for="cf-size">Fleet size</label>
+              <select id="cf-size" name="fleet_size" class="w-full rounded-lg border border-[#E5E7EB] px-3.5 py-2.5 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#D4A843]/40 focus:border-[#D4A843]">
+                <option>1–5 boats</option>
+                <option>6–20 boats</option>
+                <option>21+ boats</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-1.5" for="cf-message">Anything specific? (optional)</label>
+            <textarea id="cf-message" name="message" rows="3" class="w-full rounded-lg border border-[#E5E7EB] px-3.5 py-2.5 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#D4A843]/40 focus:border-[#D4A843]" placeholder="Bases, current handover process, anything we should know"></textarea>
+          </div>
+          <p id="fleet-contact-error" class="hidden text-sm text-red-600"></p>
+          <button type="submit" id="fleet-contact-submit" class="w-full bg-gradient-to-r from-[#D4A843] to-[#C49833] text-white font-bold text-base py-3.5 rounded-xl hover:opacity-90 active:scale-95 transition-all disabled:opacity-60">
+            Get in touch
+          </button>
+          <p class="text-xs text-[#9CA3AF] text-center">No spam, no auto-drip sequence — this goes straight to the founder's inbox.</p>
+        </form>
+
+        <div id="fleet-contact-success" class="hidden bg-white rounded-2xl p-10 shadow-2xl text-center">
+          <div class="text-4xl mb-4">⚓</div>
+          <h3 class="text-2xl font-bold text-[#1B3A5C] mb-2">Thanks — got it.</h3>
+          <p class="text-[#6B7280]">We'll be in touch soon to talk through your fleet.</p>
+        </div>
       </div>
     </section>
 
@@ -360,19 +390,23 @@ const structuredData = {
           {[
             {
               q: 'What does setup look like for my fleet?',
-              a: 'We onboard your fleet together — typically one short call. We add your boats to the database, and from that point guests can start filing check-in reports automatically. No integration or technical setup required on your side.',
+              a: 'We onboard your fleet together — typically one short call. We add your boats and team to the system, and from that point every handover runs through it, no extra setup per booking. No integration or technical setup required on your side.',
             },
             {
               q: 'How does my fleet data stay private?',
-              a: "Condition reports and issue data are visible to guests who charter your boats and to you. We are building a fleet dashboard that will give you direct access to your fleet's condition data. Your fleet is not searchable by competitors or the general public beyond what a booked guest can see.",
+              a: 'Your Fleet dashboard is private to your company — access is scoped by role, so a Base Manager only sees their own base and a Skipper only sees their assigned vessel. Condition data captured at handover, and reviews submitted by guests, are visible to future charterers of your boats and to you; none of it is searchable by competitors or the general public beyond what a booked guest can see.',
             },
             {
-              q: 'Can I respond to reported issues?',
-              a: "Not yet — but this is on the roadmap. When an issue is marked as fixed by a subsequent guest, the condition score updates immediately. The fleet dashboard (in development) will let you log maintenance actions directly against open issues.",
+              q: 'Can my team respond to reported issues?',
+              a: "Partially today: when the next guest marks a previously-flagged issue as fixed, your condition score updates immediately — no action needed from your team. A dedicated maintenance queue is in development, where staff can assign and resolve issues directly from the dashboard — prioritized automatically by each boat's next confirmed charter, so the most time-sensitive fix always surfaces first.",
             },
             {
-              q: 'Is CharterWise free?',
-              a: 'Free to use. We are building the product with our first fleet partners before introducing any paid tiers — your feedback shapes what gets built.',
+              q: 'Do my skippers need to download anything?',
+              a: 'Not yet. A dedicated Fleet Mobile app for on-the-dock staff is in development. Until it rolls out, every handover — including signature capture — runs through the Fleet web dashboard from any device, no install required.',
+            },
+            {
+              q: 'What does it cost?',
+              a: "We work directly with each fleet at this stage rather than publishing a self-serve plan — reach out and we'll figure out the right setup together.",
             },
             {
               q: 'Why did you create CharterWise?',
@@ -399,17 +433,17 @@ const structuredData = {
         <img src="/icon.png" alt="CharterWise" class="h-6 w-6 rounded-md object-cover opacity-80" />
         <span>
           <span class="font-bold text-white">CharterWise</span>
-          <span class="ml-2">— Fleet condition intelligence for charter companies.</span>
+          <span class="ml-2">— Fleet operations intelligence for charter companies.</span>
         </span>
       </div>
       <div class="flex items-center gap-6">
         <a href="/about" class="hover:text-white transition-colors">About</a>
         <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
-        <a href="mailto:hello@charterwise.app" class="hover:text-white transition-colors">Contact</a>
+        <a href={`mailto:${CONTACT_EMAIL}`} class="hover:text-white transition-colors">Contact</a>
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-6 mt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p class="text-xs text-white/30">© {new Date().getFullYear()} CharterWise.</p>
+      <p class="text-xs text-white/30">© {new Date().getFullYear()} CharterWise Ltd.</p>
       <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-xs text-white/30 hover:text-white/60 transition-colors">
         Are you a sailor? Get the app →
       </a>
@@ -417,47 +451,47 @@ const structuredData = {
   </footer>
 
   <script>
-    // Lightbox
-    const lightbox = document.getElementById('lightbox')!;
-    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-    const lightboxLabel = document.getElementById('lightbox-label')!;
+    import { createClient } from '@supabase/supabase-js';
 
-    const thumbs = Array.from(document.querySelectorAll('.screenshot-thumb')) as HTMLElement[];
-    let currentIndex = 0;
+    // Public anon key — safe in a client bundle by design, same key the
+    // mobile app and Fleet web ship with. RLS on fleet_contact_submissions
+    // (patch_064) grants INSERT only, no SELECT, so this key can never read
+    // submissions back.
+    const supabase = createClient(
+      'https://encnmjtyoemmgcqqhhiv.supabase.co',
+      'sb_publishable_Y3VxQhw_I75207SxIz1yyQ_eVFp9S3i',
+    );
 
-    const showSlide = (index: number) => {
-      currentIndex = (index + thumbs.length) % thumbs.length;
-      lightboxImg.src = thumbs[currentIndex].dataset.src!;
-      lightboxImg.alt = thumbs[currentIndex].dataset.label!;
-      lightboxLabel.textContent = thumbs[currentIndex].dataset.label!;
-    };
+    const form = document.getElementById('fleet-contact-form') as HTMLFormElement;
+    const success = document.getElementById('fleet-contact-success')!;
+    const errorEl = document.getElementById('fleet-contact-error')!;
+    const submitBtn = document.getElementById('fleet-contact-submit') as HTMLButtonElement;
 
-    const openLightbox = (index: number) => {
-      showSlide(index);
-      lightbox.classList.remove('hidden');
-      lightbox.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
 
-    const closeLightbox = () => {
-      lightbox.classList.add('hidden');
-      lightbox.classList.remove('flex');
-      document.body.style.overflow = '';
-    };
+      const data = new FormData(form);
+      const { error } = await supabase.from('fleet_contact_submissions').insert({
+        name: data.get('name'),
+        work_email: data.get('work_email'),
+        company_name: data.get('company_name'),
+        fleet_size: data.get('fleet_size'),
+        message: data.get('message') || null,
+      });
 
-    thumbs.forEach((btn, i) => {
-      btn.addEventListener('click', () => openLightbox(i));
-    });
+      if (error) {
+        errorEl.textContent = "Something went wrong sending that — please email hello@charterwise.app directly.";
+        errorEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get in touch';
+        return;
+      }
 
-    document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
-    document.getElementById('lightbox-prev')?.addEventListener('click', (e) => { e.stopPropagation(); showSlide(currentIndex - 1); });
-    document.getElementById('lightbox-next')?.addEventListener('click', (e) => { e.stopPropagation(); showSlide(currentIndex + 1); });
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('flex')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
-      if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
     });
   </script>
 </Layout>
