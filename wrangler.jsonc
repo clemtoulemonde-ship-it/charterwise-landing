@@ -1,0 +1,8 @@
+{
+  "name": "charterwise-landing",
+  "compatibility_date": "2026-05-19",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "assets": {
+    "directory": "./dist"
+  }
+}
