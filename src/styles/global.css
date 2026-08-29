@@ -1,10 +1,17 @@
+/* GENERATED FILE — do not hand-edit the token declarations below.
+   Source of truth: charterwise-design-tokens/tokens.json
+   Regenerate with `node generate.js` from that repo, then commit the diff here.
+   Non-token CSS (comments, @layer rules) is preserved by the emitter, not generated. */
+
 @import "tailwindcss";
 
 @theme {
   /* Brand colours — mirrors constants/Colors.ts */
   --color-navy:           #1B3A5C;
+  --color-navy-deep:      #0F2642;
   --color-navy-light:     #2E5480;
   --color-gold:           #D4A843;
+  --color-gold-cta:       #BF9530;
   --color-gold-dark:      #B8902F;
   --color-off-white:      #F8F6F1;
   --color-light-gray:     #F5F5F5;
@@ -17,6 +24,22 @@
 
   /* Typography */
   --font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --text-cw-xs: 11px;
+  --text-cw-xs--line-height: 1.4;
+  --text-cw-sm: 13px;
+  --text-cw-sm--line-height: 1.4;
+  --text-cw-base: 15px;
+  --text-cw-base--line-height: 1.5;
+  --text-cw-md: 17px;
+  --text-cw-md--line-height: 1.4;
+  --text-cw-lg: 20px;
+  --text-cw-lg--line-height: 1.2;
+  --text-cw-xl: 24px;
+  --text-cw-xl--line-height: 1.2;
+  --text-cw-xxl: 28px;
+  --text-cw-xxl--line-height: 1.2;
+  --text-cw-display: 34px;
+  --text-cw-display--line-height: 1.2;
 }
 
 @layer base {
