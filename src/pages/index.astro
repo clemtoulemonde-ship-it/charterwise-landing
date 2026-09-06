@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const APP_STORE_URL = 'https://apps.apple.com/us/app/charterwise/id6761048802';
 const FLEET_LOGIN_URL = 'https://fleet.charterwise.app';
 const CONTACT_EMAIL = 'hello@charterwise.app';
 
@@ -473,11 +472,8 @@ const structuredData = {
         <a href={`mailto:${CONTACT_EMAIL}`} class="hover:text-white transition-colors">Contact</a>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto px-6 mt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+    <div class="max-w-6xl mx-auto px-6 mt-6">
       <p class="text-xs text-white/30">© {new Date().getFullYear()} CharterWise Ltd.</p>
-      <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-xs text-white/30 hover:text-white/60 transition-colors">
-        Are you a sailor? Get the app →
-      </a>
     </div>
   </footer>
 
